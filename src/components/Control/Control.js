@@ -1,8 +1,8 @@
 import React from 'react';
-
+import s from '../Feedback.module.css';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import s from './Control/Control.module.css';
+
 const Control = ({ onIncrement }) => {
   return (
     <div>

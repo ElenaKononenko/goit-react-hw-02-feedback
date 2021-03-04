@@ -1,8 +1,8 @@
 import React from 'react';
-import style from './Statistic/Statistic.module.css';
+import s from '../Feedback.module.css';
 const Statistic = ({ good, neutral, bad, countTotal, countPositive }) => {
   return (
-    <ul className={style.list}>
+    <ul className={s.list}>
       <li>Good: {good}</li>
       <li>Neutral: {neutral}</li>
       <li>Bad: {bad}</li>
