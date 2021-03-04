@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-
 import s from './Feedback.module.css';
-
-import Button from 'react-bootstrap/Button';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Control from './Control/Control';
+import SectionTitle from './Section/SectionTitle';
+import Statistic from './Statistic/Statistic';
+import Notification from './Notification/Notification';
 
 class Feedback extends Component {
   static defaultProps = {
@@ -33,50 +33,23 @@ class Feedback extends Component {
   render() {
     return (
       <section className={s.feedback}>
-        <h1>Please leave feedback</h1>
-        <div>
-          <Button
-            className={s.button}
-            name="good"
-            variant="outline-warning"
-            onClick={this.hanleIncrement}
-          >
-            Good
-          </Button>
-          <Button
-            className={s.button}
-            name="neutral"
-            variant="outline-warning"
-            onClick={this.hanleIncrement}
-          >
-            Neutral
-          </Button>
-          <Button
-            className={s.button}
-            name="bad"
-            variant="outline-warning"
-            onClick={this.hanleIncrement}
-          >
-            Bad
-          </Button>
-        </div>
+        <SectionTitle title="Please leave feedback" children>
+          <Control onIncrement={this.hanleIncrement} />
+        </SectionTitle>
 
-        <div className="">
-          <h2>Statistics</h2>
-          <ul className={s.list}>
-            <li>Good: {this.state.good}</li>
-            <li>Neutral: {this.state.neutral}</li>
-            <li>Bad: {this.state.bad}</li>
-            <li>Total: {this.countTotalFeedback()}</li>
-            <li>
-              Positive feedback:{' '}
-              {this.countPositiveFeedbackPercentage()
-                ? this.countPositiveFeedbackPercentage()
-                : 0}
-              %
-            </li>
-          </ul>
-        </div>
+        {this.countTotalFeedback() > 0 ? (
+          <SectionTitle children title="Statistics">
+            <Statistic
+              good={this.state.good}
+              neutral={this.state.neutral}
+              bad={this.state.bad}
+              countTotal={this.countTotalFeedback()}
+              countPositive={this.countPositiveFeedbackPercentage()}
+            />
+          </SectionTitle>
+        ) : (
+          <Notification />
+        )}
       </section>
     );
   }

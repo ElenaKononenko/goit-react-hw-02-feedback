@@ -4,7 +4,7 @@ import Feedback from './components/Feedback';
 function App() {
   return (
     <>
-      <Feedback />;
+      <Feedback children />;
     </>
   );
 }
