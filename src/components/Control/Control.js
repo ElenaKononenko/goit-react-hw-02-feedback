@@ -1,5 +1,5 @@
 import React from 'react';
-import s from '../Feedback.module.css';
+import s from './Control.module.css';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

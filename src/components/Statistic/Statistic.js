@@ -1,5 +1,5 @@
 import React from 'react';
-import s from '../Feedback.module.css';
+import s from './Statistic.module.css';
 const Statistic = ({ good, neutral, bad, countTotal, countPositive }) => {
   return (
     <ul className={s.list}>
