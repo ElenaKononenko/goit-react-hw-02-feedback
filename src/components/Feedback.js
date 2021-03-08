@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import s from './Feedback.module.css';
 import Control from './Control/Control';
 import SectionTitle from './Section/SectionTitle';
@@ -55,3 +56,6 @@ class Feedback extends Component {
   }
 }
 export default Feedback;
+Feedback.propTypes = {
+  initialValue: PropTypes.number,
+};

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import s from './Control.module.css';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -34,3 +35,6 @@ const Control = ({ onIncrement }) => {
   );
 };
 export default Control;
+Control.propTypes = {
+  onIncrement: PropTypes.func.isRequired,
+};
